@@ -1,0 +1,46 @@
+[class*="col-"] {
+    float: left;
+}
+
+.col-2 {
+    width: (100% / 2);
+    width: calc(100% / 2);
+}
+
+.col-3 {
+    width: (100% / 3);
+    width: calc(100% / 3);
+}
+.col-2-3 {
+    width: (100% / 3 * 2);
+    width: calc(100% / 3 * 2);
+}
+
+.col-4 {
+    width: (100% / 4);
+    width: calc(100% / 4);
+}
+.col-3-4 {
+    width: (100% / 4 * 3);
+    width: calc(100% / 4 * 3);
+}
+
+.col-5 {
+    width: (100% / 5);
+    width: calc(100% / 5);
+}
+
+.col-2-5 {
+    width: (100% / 5 * 2);
+    width: calc(100% / 5 * 2);
+}
+
+.col-3-5 {
+    width: (100% / 5 * 3);
+    width: calc(100% / 5 * 3);
+}
+
+.col-4-5 {
+    width: (100% / 5 * 4);
+    width: calc(100% / 5 * 4);
+}

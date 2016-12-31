@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box; 
+}
+
+[placeholder]:focus {
+    &::-webkit-input-placeholder {
+        color: transparent;
+    }
+    &:-ms-input-placeholder {
+        color: transparent;
+    }
+    &::-moz-input-placeholder {
+        color: transparent;
+    }
+}
+a, input, select {
+    outline: none;
+    &:focus, &:active {
+        outline: none; 
+    }
+}
+
+/* if needed - to hide spin button */
+/* input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    appearance: none;
+    margin: 0; 
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+} */
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+select::-ms-expand {
+    display: none;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+select {
+    appearance: none;
+}
+textarea,
+input[type="text"],
+input[type="password"], 
+input[type="email"],
+input[type="number"],
+select {
+     border: 1px solid white;
+}
+input[type="radio"], input[type="checkbox"]  {
+  @include vmiddle;
+  margin: 0 8px 0 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+button {
+  border: 0;
+  padding: 0;
+}
+select {
+    text-indent: 1px;
+    text-overflow: '';
+}
+button {
+  cursor: pointer;
+  white-space: nowrap;
+}
+textarea {
+    resize: vertical;
+}
+
+b, strong {
+    @include webfont-text-bold();
+    font-size: inherit;
+}
+
+em {
+    font-style: italic;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+img {
+    user-select: none;
+    max-width: 100%;
+    height: auto;
+}
+
+ol {
+    list-style-type: decimal;
+}
+ul {
+    list-style-type: none;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+svg { 
+    max-height: 100%; 
+    pointer-events: none;
+}

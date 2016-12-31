@@ -1,0 +1,44 @@
+/* heading h1 */
+.alpha  {
+    &, > a {
+    }
+}
+
+/* heading h2 */
+.beta {
+    &, > a {
+    }
+}
+  
+/* heading h3 */
+.gamma {
+    &, > a {
+    }
+}
+
+/* heading h4 */
+.delta {
+    &, > a {
+    }
+}
+
+/* heading h5 */
+.epsilon {
+    &, > a {
+    }
+}
+
+/* heading h6 */
+.zeta {
+    &, > a {
+    }
+}
+
+.base-text {
+    
+}
+
+.base-link {
+    &:hover, &:focus {
+    }
+}

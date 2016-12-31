@@ -1,0 +1,20 @@
+/* gap values */
+$xxs-gap: 1rem;
+$xs-gap: 1.5rem;
+$s-gap: 2rem;
+$m-gap: 3rem;
+$l-gap: 4rem;
+$xl-gap: 6rem;
+
+// sprites 
+$svg-sprite-path: url(../img/sprite.svg) no-repeat;
+$png-sprite-path: url(../img/sprite.png) no-repeat;
+
+/* breakpoint variables */
+@include breakpoint-set('no query fallbacks', true);
+$mobile: 30em;
+$phablet: 37.5em;
+$tablet: 48em;
+$laptop: 64em;
+$desktop: 80em;
+$retina: 100em;
