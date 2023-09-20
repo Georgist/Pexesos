@@ -55,8 +55,8 @@ select {
      border: 1px solid white;
 }
 input[type="radio"], input[type="checkbox"]  {
-  @include vmiddle;
-  margin: 0 8px 0 0;
+    ;vertical-align: middle;
+    margin: 0 8px 0 0;
 }
 
 button::-moz-focus-inner,
@@ -78,7 +78,7 @@ textarea {
 }
 
 b, strong {
-    @include webfont-text-bold();
+    font-weight: bold;
     font-size: inherit;
 }
 

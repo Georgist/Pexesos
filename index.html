@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- <meta name="author" content="Erik Rehák, JARED s.r.o. " /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="assets/sass/styles.css">
+
+    <title>Pexesos</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+      <form id="generate-layout-form">
+        <div class="left-side">
+          <span>Number of items:</span>
+        </div>
+        <div class="right-side">
+          <select name="number-of-items">
+            <option value="6">6</option>
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+            <option value="48">48</option>
+          </select>
+
+          <button name="generate-btn">Start a new game</button>
+        </div>
+      </form>
+      <ul class="pex-tiles js-pex-tiles">
+      </ul>
+    </div>
+    <script src="public/js/scripts.js" type="module"></script>
+</body>
+</html>

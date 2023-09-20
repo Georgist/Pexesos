@@ -1,6 +1,6 @@
 *.cfg
 prepros.cfg
 prepros.cfg
-assets/.sass-cache
-assets/bower_components
-assets/node_modules
+.sass-cache
+bower_components
+node_modules
