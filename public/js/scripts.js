@@ -70,6 +70,7 @@ let allPairs = [];
 let pexDataImages = ['https://i.imgur.com/st32XSh.jpg', 'https://i.imgur.com/VRY3466.jpg', 'https://i.imgur.com/ka3FK2E.jpg', 'https://i.imgur.com/st32XSh.jpg', 'https://i.imgur.com/VRY3466.jpg', 'https://i.imgur.com/ka3FK2E.jpg', 'https://i.imgur.com/st32XSh.jpg', 'https://i.imgur.com/VRY3466.jpg', 'https://i.imgur.com/ka3FK2E.jpg'];
 let pexData = [];
 
+
 class pexItem {
     constructor(pairValue, id, imageUrl, isActive = false, isVisited = false, isMatched = false) {
         this.pairValue = pairValue;
@@ -90,6 +91,12 @@ class Pexeso {
 
         for (let i = 0; i < numberOfBoxes; i++) {
             let newPexDataItem = new pexItem(generateRandomID(), i, pexDataImages[i]);
+
+            if(Number(generateLayoutSelect.value) === 400) {
+                pexDataImages = 'https://i.imgur.com/D8zoc29.jpg';
+                newPexDataItem = new pexItem(generateRandomID(), i, pexDataImages);
+            }
+
             allPairs.push(newPexDataItem.pairValue);
             pexData.push(newPexDataItem);
 
@@ -107,10 +114,13 @@ class Pexeso {
 
     createPexBoxes() {
         let pexBoxes;
-        pexBoxes = pexData.map((item) => {
+        pexBoxes = pexData.map((item, index) => {
             return `<li class="pex-box js-pex-box" data-clicked="false" data-id="${item.id}" data-pair-value="${item.pairValue}">
                 <div class="pex-box-face front-face">
-                  <span>PEX</span>
+                    <span class="front-face-inner">
+                        <span class="title">PEX</span>
+                        <span class="index">${index + 1}</span>
+                    </span>
                 </div>
                 <div class="pex-box-face back-face">
                   <img src="${item.imageUrl}" />
@@ -118,6 +128,11 @@ class Pexeso {
               </li>
             `;
         }).join("");
+
+
+        if(Number(generateLayoutSelect.value) === 400) {
+            pexTiles.classList.add('hell-layout');
+        }
 
         pexTiles.replaceChildren();
         pexTiles.insertAdjacentHTML("afterbegin", pexBoxes);
@@ -142,6 +157,7 @@ class Pexeso {
         generateLayoutBtn.dataset.clicked = 'false';
         localStorage.removeItem("pexData");
         pexTiles.replaceChildren();
+        pexTiles.classList.remove('hell-layout');
     }
 
     updateVisitedItem(id, currentItem) {

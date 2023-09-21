@@ -73,6 +73,12 @@ body {
     grid-gap: 14px;
     position: relative;
     text-align: center;
+
+    &.hell-layout {
+        grid-template-rows: repeat(20, 1fr);
+        grid-template-columns: repeat(20, 1fr);
+        grid-gap: 2px;
+    }
 }
 
 .pex-box {
@@ -81,6 +87,10 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.6s;
     height: 200px;
+
+    .pex-tiles.hell-layout & {
+        height: 36px;
+    }
 
     &.active,
     &.matched {
@@ -91,7 +101,7 @@ body {
         .pex-box-face {
             &.front-face {
                 span {
-                    opacity: 0.6;
+                    opacity: 0.8;
                 }
             }
         }
@@ -120,11 +130,41 @@ body {
         border-radius: 20px;
         overflow: hidden;
 
+        .pex-tiles.hell-layout & {
+            border-radius: 8px;
+        }
+
         &.front-face {
-            span {
-                font-size: 30px;
-                transition: opacity 0.3s;
-                color: white;
+            .front-face-inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                .title {
+                    font-size: 16px;
+                    transition: opacity 0.3s;
+                    color: gray;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+
+                    .pex-tiles.hell-layout & {
+                        font-size: 6px;
+                        margin-bottom: 3px;
+                        letter-spacing: .6px;
+                    }
+                }
+                .index {
+                    font-size: 34px;
+                    transition: opacity 0.3s;
+                    color: white;
+                    font-weight: bold;
+
+                    .pex-tiles.hell-layout & {
+                        font-size: 12px;
+                        letter-spacing: .4px;
+                    }
+                }
             }
 
             &.visited {
@@ -144,6 +184,10 @@ body {
             height: 100%;
             object-fit: cover;
             border-radius: 20px;
+
+            .pex-tiles.hell-layout & {
+                border-radius: 8px;
+            }
         }
     }
 }

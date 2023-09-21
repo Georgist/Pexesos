@@ -185,6 +185,11 @@ body {
   position: relative;
   text-align: center;
 }
+.pex-tiles.hell-layout {
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  grid-gap: 2px;
+}
 
 .pex-box {
   position: relative;
@@ -193,11 +198,14 @@ body {
   transition: transform 0.6s;
   height: 200px;
 }
+.pex-tiles.hell-layout .pex-box {
+  height: 36px;
+}
 .pex-box.active, .pex-box.matched {
   transform: rotateY(180deg);
 }
 .pex-box:hover .pex-box-face.front-face span {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .pex-box.visited .pex-box-face {
   background: #4e4e4e;
@@ -218,10 +226,36 @@ body {
   border-radius: 20px;
   overflow: hidden;
 }
-.pex-box .pex-box-face.front-face span {
-  font-size: 30px;
+.pex-tiles.hell-layout .pex-box .pex-box-face {
+  border-radius: 8px;
+}
+.pex-box .pex-box-face.front-face .front-face-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.pex-box .pex-box-face.front-face .front-face-inner .title {
+  font-size: 16px;
+  transition: opacity 0.3s;
+  color: gray;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.pex-tiles.hell-layout .pex-box .pex-box-face.front-face .front-face-inner .title {
+  font-size: 6px;
+  margin-bottom: 3px;
+  letter-spacing: 0.6px;
+}
+.pex-box .pex-box-face.front-face .front-face-inner .index {
+  font-size: 34px;
   transition: opacity 0.3s;
   color: white;
+  font-weight: bold;
+}
+.pex-tiles.hell-layout .pex-box .pex-box-face.front-face .front-face-inner .index {
+  font-size: 12px;
+  letter-spacing: 0.4px;
 }
 .pex-box .pex-box-face.front-face.visited span {
   display: none;
@@ -236,6 +270,9 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+}
+.pex-tiles.hell-layout .pex-box .pex-box-face img {
+  border-radius: 8px;
 }
 
 /*# sourceMappingURL=styles.css.map */
